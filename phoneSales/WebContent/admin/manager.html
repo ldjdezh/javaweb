@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>管理员页面</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">手机销售网后台系统</a>
+                        </div>
+                        <div>
+                            <p class="navbar-text">管理员页面</p>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <ul id="myTab" class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#index" data-toggle="tab">
+                                    管理员系统
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#lookOrder" data-toggle="tab">
+                                    查看订单
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#addPhone" data-toggle="tab">
+                                    添加手机
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#lookPhone" data-toggle="tab">
+                                    浏览手机
+                                </a>
+                            </li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade in active" id="index">
+                                <h1>欢迎来到后台管理系统</h1>
+                            </div>
+
+                            <div class="tab-pane fade" id="lookOrder">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>用户</th>
+                                            <th>订单号</th>
+                                            <th>手机名称</th>
+                                            <th>数量</th>
+                                            <th>价格</th>
+                                            <th>状态</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>小明</td>
+                                            <td>001</td>
+                                            <td>360 N6</td>
+                                            <td>1</td>
+                                            <td>1399</td>
+                                            <td>
+                                                <form role="form">
+                                                    <div class="form-group">
+                                                        <select class="form-control">
+                                                            <option>取消订单</option>
+                                                            <option>发货</option>
+                                                            <option>正在配送</option>
+                                                            <option>已收货</option>
+                                                        </select>
+                                                        <button class="btn btn-default btn-sm" type="submit">
+                                                            确定
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <span class="label label-info">共10页</span>
+                                <span class="label label-info">当前在第1页</span>
+                                <span class="label label-info">每页显示5条信息</span>
+                                <ul class="pager">
+                                    <li class="previous">
+                                        <a href="#">&larr; 前一页</a>
+                                    </li>
+                                    <li class="next">
+                                        <a href="#">后一页 &rarr;</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="addPhone">
+                                <form action="" method="POST" role="form" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="name">手机版本号</label>
+                                        <input type="text" class="form-control" id="name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">手机名称</label>
+                                        <input type="text" class="form-control" id="name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">手机制造商</label>
+                                        <input type="text" class="form-control" id="name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">手机价格</label>
+                                        <input type="text" class="form-control" id="name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">手机信息</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputfile">手机图片</label>
+                                        <input type="file" id="inputfile">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">提交</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="lookPhone">
+                                <table class="table table-bordered">
+                                    <caption>当前显示的内容</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>手机标识号</th>
+                                            <th>手机图片</th>
+                                            <th>手机名称</th>
+                                            <th>手机价格</th>
+                                            <th>查看详情</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>csss</td>
+                                            <td>
+                                                <img src="../img/360N6Pro.jpg" class="img-thumbnail">
+                                            </td>
+                                            <td>苹果999</td>
+                                            <td>53453</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default btn-sm">点击查看</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default btn-sm">修改</button>
+                                                <button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default btn-sm">删除</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>csss</td>
+                                            <td>
+                                                <img src="../img/oppor11s.jpg" class="img-thumbnail">
+                                            </td>
+                                            <td>小米999</td>
+                                            <td>53453</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <span class="label label-info">共10页</span>
+                                <span class="label label-info">当前在第1页</span>
+                                <span class="label label-info">每页显示5条信息</span>
+                                <ul class="pager">
+                                    <li class="previous">
+                                        <a href="#">&larr; 前一页</a>
+                                    </li>
+                                    <li class="next">
+                                        <a href="#">后一页 &rarr;</a>
+                                    </li>
+                                </ul>
+
+                                <div>
+                                    <!-- 模态框（Modal） -->
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                        &times;
+                                                    </button>
+                                                    <h4 class="modal-title" id="myModalLabel">
+                                                        提示
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    确定删除?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                                    </button>
+                                                    <button type="submit" class="btn btn-primary">
+                                                        提交删除
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>
