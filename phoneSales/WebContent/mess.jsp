@@ -19,7 +19,8 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
-                    <h2>恭喜成功登录</h2>
+                <% String mess = (String)request.getAttribute("mess"); %>
+                    <h2><%=mess %></h2>
                 </div>
             </div>
         </div>

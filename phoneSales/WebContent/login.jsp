@@ -21,22 +21,22 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="well">
                     <h2>用户登录</h2>
-                    <form role="form">
+                    <form action="LoginServlet" method="POST" role="form">
                         <div>
                             <div class="form-group">
                                 <label for="name">用户名称</label>
-                                <input type="text" class="form-control" id="name" />
+                                <input name="logname" type="text" class="form-control" />
                                 <div class="alert alert-danger">用户名不能为空</div>
                             </div>
                             <div class="form-group">
                                 <label for="name">用户密码</label>
-                                <input type="text" class="form-control" id="name" />
+                                <input name="password" type="password" class="form-control" />
                                 <div class="alert alert-danger">密码不能为空</div>
                             </div>
 
                         </div>
                         <div>
-                            <button type="button" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary">
                                 立即登录
                             </button>
                         </div>
