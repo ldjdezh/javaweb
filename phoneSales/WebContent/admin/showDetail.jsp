@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=utf-8" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -34,18 +36,37 @@
                             </a>
                             <div class="media-body">
                                 <h3 class="media-heading">360 N6</h3>
-                                <p class="text-info">青年新旗舰！5030mAh大电池/18W快充/5.93英寸全面屏/骁龙630/赠《全名枪战》豪杰礼包1张</p>
-                                <table class="table table-condensed">
-                                    <thead>
-                                        <tr>
-                                            <th>制造商</th>
-                                            <th>价格</th>
-                                        </tr>
-                                    </thead>
+                                <table class="table table-bordered">
                                     <tbody>
                                         <tr>
-                                            <td>360公司</td>
-                                            <td>￥1399</td>
+                                            <td>
+                                                <label for="name">手机版本号</label>
+                                            </td>
+                                            <td>001</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="name">手机名称</label>
+                                            </td>
+                                            <td>小米6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="name">手机制造商</label>
+                                            </td>
+                                            <td>小米公司</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="name">手机价格</label>
+                                            </td>
+                                            <td>1234</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="name">手机信息</label>
+                                            </td>
+                                            <td>呵呵</td>
                                         </tr>
                                     </tbody>
                                 </table>

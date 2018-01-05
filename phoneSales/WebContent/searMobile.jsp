@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=utf-8" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -13,58 +15,8 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <nav class="navbar navbar-default" role="navigation">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="#">手机销售网</a>
-                        </div>
-                        <div>
-                            <ul class="nav navbar-nav">
-                                <li>
-                                    <a href="#">
-                                        <span class="glyphicon glyphicon-user"></span> 注册</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="glyphicon glyphicon-log-in"></span> 登录</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="glyphicon glyphicon-phone"></span>浏览手机</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="glyphicon glyphicon-search"></span>查询手机</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="glyphicon glyphicon-shopping-cart"></span>查看购物车</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="glyphicon glyphicon-th-list"></span>查看订单</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="glyphicon glyphicon-edit"></span>修改注册信息</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="glyphicon glyphicon-cog"></span>修改密码</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="glyphicon glyphicon-log-out"></span>退出</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-
+        <%@ include file="base.html" %>
+        
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
