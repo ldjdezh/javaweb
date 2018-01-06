@@ -22,16 +22,33 @@
                 <div class="well">
                     <h2>用户登录</h2>
                     <form action="LoginServlet" method="POST" role="form">
+                        <%
+                        String lognameInfo = (String)request.getAttribute("lognameInfo");
+                        String passwordInfo = (String)request.getAttribute("passwordInfo");
+                        %>
+                        
                         <div>
                             <div class="form-group">
                                 <label for="name">用户名称</label>
                                 <input name="logname" type="text" class="form-control" />
-                                <div class="alert alert-danger">用户名不能为空</div>
+                                <%
+                                if(lognameInfo!=null) {
+                                %>
+                                <div class="alert alert-danger">
+                              		<%=lognameInfo %>
+                                </div>
+                                <%} %>
                             </div>
                             <div class="form-group">
                                 <label for="name">用户密码</label>
                                 <input name="password" type="password" class="form-control" />
-                                <div class="alert alert-danger">密码不能为空</div>
+                                <%
+                                if(passwordInfo!=null) {
+                                %>
+                                <div class="alert alert-danger">
+                              		<%=passwordInfo %>
+                                </div>
+                                <%} %>
                             </div>
 
                         </div>

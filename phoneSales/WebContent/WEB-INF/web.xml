@@ -49,4 +49,14 @@
     <servlet-name>ExitServlet</servlet-name>
     <url-pattern>/ExitServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminLoginServlet</display-name>
+    <servlet-name>AdminLoginServlet</servlet-name>
+    <servlet-class>cn.ldj.myservlet.control.admin.AdminLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminLoginServlet</servlet-name>
+    <url-pattern>/admin/AdminLoginServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

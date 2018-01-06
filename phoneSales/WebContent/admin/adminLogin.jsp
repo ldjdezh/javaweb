@@ -30,17 +30,35 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form">
+                    <%
+                    String uInfo = (String)request.getAttribute("uInfo");
+                    String pInfo = (String)request.getAttribute("pInfo");
+                    %>
+                        <form action="AdminLoginServlet" method="post" class="form-horizontal" role="form">
                             <div class="form-group">
                                 <label for="firstname" class="col-sm-4 control-label">管理员账号</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="firstname"/>
+                                    <input name="username" type="text" class="form-control"/>
+                                    <%
+	                                if(uInfo!=null) {
+	                                %>
+	                                <div class="alert alert-danger">
+	                              		<%=uInfo %>
+	                                </div>
+	                                <%} %>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="lastname" class="col-sm-4 control-label">密码</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="lastname" />
+                                    <input name="password" type="password" class="form-control" />
+                                    <%
+	                                if(pInfo!=null) {
+	                                %>
+	                                <div class="alert alert-danger">
+	                              		<%=pInfo %>
+	                                </div>
+	                                <%} %>
                                 </div>
                             </div>
                             <div class="form-group">
