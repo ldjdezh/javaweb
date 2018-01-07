@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" %>
-<%@ page import="java.util.*,cn.ldj.mybean.data.*" %>
+<%@ page import="java.util.*,cn.ldj.domain.*" %>
 
 <!DOCTYPE html>
 <html lang="zh-CN">

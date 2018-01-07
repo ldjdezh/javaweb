@@ -1,29 +1,20 @@
-package cn.ldj.myservlet.control;
+package cn.ldj.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.ldj.domain.User;
+import cn.ldj.service.UserService;
+import cn.ldj.service.impl.UserServiceImpl;
+
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@Override
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+	private UserService userService = new UserServiceImpl();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -52,24 +43,17 @@ public class RegisterServlet extends HttpServlet {
 			return;
 		}
 
-		String url = "jdbc:mysql://localhost:3306/mobileshop?useSSL=true";
-		String user = "root";
-		String pwd = "123456";
 
 		try {
-			Connection con = DriverManager.getConnection(url, user, pwd);
-			String sql = "INSERT INTO user(logname,password,phone,address,realname) VALUES(?,?,?,?,?)";
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, logname);
-			pstmt.setString(2, password); 
-			pstmt.setString(3, phone);
-			pstmt.setString(4,address);
-			pstmt.setString(5, realname);
+			User user = new User();
+			user.setLogname(logname); 
+			user.setPassword(password); 
+			user.setPhone(phone); 
+			user.setAddress(address); 
+			user.setRealname(realname);
 			
-			pstmt.executeUpdate();
-			pstmt.close();
-			con.close();
-		} catch (SQLException e) {
+			userService.register(user);
+		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("mess", "注册信息有问题");
 			request.getRequestDispatcher("mess.jsp").forward(request, response); 

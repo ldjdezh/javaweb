@@ -17,6 +17,11 @@
     <div class="container">
         <jsp:include page="base.jsp" />
 
+		<%
+		String tip1 = (String)request.getAttribute("tip1");
+		String tip2 = (String)request.getAttribute("tip2");
+		String tip3 = (String)request.getAttribute("tip3");
+		%>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
@@ -24,14 +29,35 @@
                         <div>
                             <label for="name">原密码</label>
                             <input type="text" class="form-control" name="password" />
+                                <%
+                                if(tip1!=null) {
+                                %>
+                                <div class="alert alert-danger">
+                              		<%=tip1 %>
+                                </div>
+                                <%} %>
                         </div>
                         <div>
                             <label for="name">新密码</label>
                             <input type="text" class="form-control" name="newPassword" />
+								<%
+                                if(tip2!=null) {
+                                %>
+                                <div class="alert alert-danger">
+                              		<%=tip2 %>
+                                </div>
+                                <%} %>
                         </div>
                         <div>
                             <label for="name">再次输入新密码</label>
                             <input type="text" class="form-control" name="againPassword" />
+                                <%
+                                if(tip3!=null) {
+                                %>
+                                <div class="alert alert-danger">
+                              		<%=tip3 %>
+                                </div>
+                                <%} %>
                         </div>
                         <button data-toggle="modal" data-target="#myModal3" type="button" class="btn btn-default btn-lg">确定修改</button>
 

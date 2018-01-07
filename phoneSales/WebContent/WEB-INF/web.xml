@@ -13,7 +13,7 @@
     <description></description>
     <display-name>RegisterServlet</display-name>
     <servlet-name>RegisterServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.RegisterServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.RegisterServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RegisterServlet</servlet-name>
@@ -23,7 +23,7 @@
     <description></description>
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.LoginServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
@@ -33,7 +33,7 @@
     <description></description>
     <display-name>OrderServlet</display-name>
     <servlet-name>OrderServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.OrderServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.OrderServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>OrderServlet</servlet-name>
@@ -43,7 +43,7 @@
     <description></description>
     <display-name>ExitServlet</display-name>
     <servlet-name>ExitServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.ExitServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.ExitServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ExitServlet</servlet-name>
@@ -53,7 +53,7 @@
     <description></description>
     <display-name>AdminLoginServlet</display-name>
     <servlet-name>AdminLoginServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.admin.AdminLoginServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.admin.AdminLoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminLoginServlet</servlet-name>
@@ -63,7 +63,7 @@
     <description></description>
     <display-name>AddPhoneServlet</display-name>
     <servlet-name>AddPhoneServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.admin.AddPhoneServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.admin.AddPhoneServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddPhoneServlet</servlet-name>
@@ -73,7 +73,7 @@
     <description></description>
     <display-name>LookMobileServlet</display-name>
     <servlet-name>LookMobileServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.LookMobileServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.LookMobileServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LookMobileServlet</servlet-name>
@@ -83,7 +83,7 @@
     <description></description>
     <display-name>ModifyInfoServlet</display-name>
     <servlet-name>ModifyInfoServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.ModifyInfoServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.ModifyInfoServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ModifyInfoServlet</servlet-name>
@@ -93,7 +93,7 @@
     <description></description>
     <display-name>GetInfoServlet</display-name>
     <servlet-name>GetInfoServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.GetInfoServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.GetInfoServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>GetInfoServlet</servlet-name>
@@ -103,7 +103,7 @@
     <description></description>
     <display-name>ModifyPasswordServlet</display-name>
     <servlet-name>ModifyPasswordServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.ModifyPasswordServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.ModifyPasswordServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ModifyPasswordServlet</servlet-name>
@@ -113,7 +113,7 @@
     <description></description>
     <display-name>GetMobileServlet</display-name>
     <servlet-name>GetMobileServlet</servlet-name>
-    <servlet-class>cn.ldj.myservlet.control.GetMobileServlet</servlet-class>
+    <servlet-class>cn.ldj.servlet.GetMobileServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>GetMobileServlet</servlet-name>

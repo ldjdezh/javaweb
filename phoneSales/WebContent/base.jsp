@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" %>
-<jsp:useBean id="user" class="cn.ldj.mybean.data.User" scope="session" />
+<jsp:useBean id="user" class="cn.ldj.domain.User" scope="session" />
 
 <div class="row">
             <div class="col-md-10 col-md-offset-1">

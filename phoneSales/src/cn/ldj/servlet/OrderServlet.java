@@ -1,4 +1,4 @@
-package cn.ldj.myservlet.control;
+package cn.ldj.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

@@ -1,4 +1,4 @@
-package cn.ldj.mybean.data;
+package cn.ldj.domain;
 
 public class Manager {
 	private int mid;

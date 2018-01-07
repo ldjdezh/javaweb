@@ -1,4 +1,4 @@
-package cn.ldj.mybean.data;
+package cn.ldj.domain;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ public class PageMobile {
 	private int next; // 后一页
 	private int total; // 共多少条记录
 	private int pageNum; // 共多少页
-	private int num; // 一页多少条记录
+	private int pageSize; // 一页多少条记录
 	private List<MobileForm> list;
 
 	public int getCurrentPage() {
@@ -51,12 +51,12 @@ public class PageMobile {
 		this.pageNum = pageNum;
 	}
 
-	public int getNum() {
-		return num;
+	public int getPageSize() {
+		return pageSize;
 	}
 
-	public void setNum(int num) {
-		this.num = num;
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<MobileForm> getList() {

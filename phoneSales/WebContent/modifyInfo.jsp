@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8" %>
-<%@ page import="cn.ldj.mybean.data.*" %>
-<jsp:useBean id="user" class="cn.ldj.mybean.data.User" scope="session" />
+<%@ page import="cn.ldj.domain.*" %>
+<jsp:useBean id="user" class="cn.ldj.domain.User" scope="session" />
 
 <!DOCTYPE html>
 <html lang="zh-CN">
