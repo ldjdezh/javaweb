@@ -15,7 +15,7 @@
 
 <body>
     <div class="container">
-        <%@ include file="base.html" %>
+        <jsp:include page="base.jsp" />
         
         <%
         String lognameinfo = (String)request.getAttribute("lognameinfo");

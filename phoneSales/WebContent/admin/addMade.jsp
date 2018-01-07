@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>管理员页面</title>
+    <title>手机类别</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -22,7 +22,7 @@
                             <a class="navbar-brand" href="#">手机销售网后台系统</a>
                         </div>
                         <div>
-                            <p class="navbar-text">管理员页面</p>
+                            <p class="navbar-text">手机类别</p>
                         </div>
                     </div>
                 </nav>
@@ -35,7 +35,20 @@
             <div class="col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h2>欢迎登录后台管理系统</h2>
+                        <form role="form">
+                            <label for="name">输入新的手机类别</label>
+                            <input type="text" class="form-control"/>
+                            <button type="submit" class="btn btn-default">添加</button>
+                        </form>
+                        <br/>
+                        <form role="form">
+                            <label for="name">选择要删除的手机类别</label>
+                            <select class="form-control">
+                                <option>vivo</option>
+                                <option>oppo</option>
+                              </select>
+                            <button type="submit" class="btn btn-default">删除</button>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -73,9 +73,11 @@ public class LoginServlet extends HttpServlet {
 			String rPhone = rs.getString("phone");
 			String rAddress = rs.getString("address");
 			String rRealname = rs.getString("realname");
+			int uid = rs.getInt("uid");
 			
 			User user = new User();
 			
+			user.setUid(uid);
 			user.setLogname(logname); 
 			user.setPassword(rPassword);
 			user.setPhone(rPhone);

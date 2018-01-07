@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8" %>
+<%@ page import="cn.ldj.mybean.data.*" %>
+<jsp:useBean id="user" class="cn.ldj.mybean.data.User" scope="session" />
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -15,23 +17,23 @@
 
 <body>
     <div class="container">
-        <%@ include file="base.html" %>
+        <jsp:include page="base.jsp" />
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
-                    <form role="form">
+                    <form action="ModifyInfoServlet" method="post" role="form">
                         <div>
                             <label for="name">联系电话</label>
-                            <input type="text" class="form-control" id="name" />
+                            <input value='<jsp:getProperty property="phone" name="user"/>' name="phone" type="text" class="form-control" />
                         </div>
                         <div>
                             <label for="name">邮寄地址</label>
-                            <input type="text" class="form-control" id="name" />
+                            <input value='<jsp:getProperty property="address" name="user"/>' name="address" type="text" class="form-control" />
                         </div>
                         <div>
                             <label for="name">真实姓名</label>
-                            <input type="text" class="form-control" id="name" />
+                            <input value='<jsp:getProperty property="realname" name="user"/>' name="realname" type="text" class="form-control" />
                         </div>
                         <button data-toggle="modal" data-target="#myModal3" type="button" class="btn btn-default btn-lg">确定修改</button>
 

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" %>
+<%@ page import="java.util.*,cn.ldj.mybean.data.*" %>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -15,7 +16,11 @@
 
 <body>
     <div class="container">
-        <%@ include file="base.html" %>
+        <jsp:include page="base.jsp" />
+
+		<%
+		List<MobileClassify> list = (List<MobileClassify>)request.getAttribute("list");
+		%>
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -23,12 +28,15 @@
                     <form role="form">
                         <div class="form-group">
                             <label for="name">选择某类手机</label>
-                            <select class="form-control">
-                                <option>所有手机</option>
-                                <option>小米</option>
-                                <option>华为</option>
-                                <option>vivo</option>
-                                <option>oppo</option>
+                            <select name="class" class="form-control">
+                                <option value="0">所有手机</option>
+                                <%
+                                	for(MobileClassify mc:list) {
+                                %>
+                                <option value="<%=mc.getMid()%>">
+                                	<%=mc.getName() %>
+                                </option>
+                                <%} %>
                             </select>
                             <button type="submit" class="btn btn-default">确定</button>
                         </div>

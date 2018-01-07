@@ -45,8 +45,11 @@
                                 <input type="text" class="form-control" id="name" />
                             </div>
                             <div class="form-group">
-                                <label for="name">手机制造商</label>
-                                <input type="text" class="form-control" id="name" />
+                                <label for="name">手机类别</label>
+                                <select class="form-control">
+                                    <option>vivo</option>
+                                    <option>oppo</option>
+                                  </select>
                             </div>
                             <div class="form-group">
                                 <label for="name">手机价格</label>

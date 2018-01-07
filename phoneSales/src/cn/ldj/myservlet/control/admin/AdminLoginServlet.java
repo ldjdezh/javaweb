@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.ldj.mybean.data.Manager;
+
 public class AdminLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -69,8 +71,17 @@ public class AdminLoginServlet extends HttpServlet {
 				return;
 			}
 			
+			Manager manager = new Manager();
+			
+			manager.setName(username); 
+			manager.setPassword(rPassword);
+			
+			request.getSession().setAttribute("manager", manager);
+			response.sendRedirect("manager.jsp");
 		} catch (SQLException e) {
 			e.printStackTrace();
+			request.setAttribute("mess", "登录失败");
+			request.getRequestDispatcher("mess.jsp").forward(request, response);
 		}
 		
 		

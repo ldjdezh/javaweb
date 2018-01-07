@@ -15,7 +15,7 @@
 
 <body>
     <div class="container">
-        <%@ include file="base.html" %>
+        <jsp:include page="base.jsp" />
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">

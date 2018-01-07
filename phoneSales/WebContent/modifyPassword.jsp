@@ -15,12 +15,12 @@
 
 <body>
     <div class="container">
-        <%@ include file="base.html" %>
+        <jsp:include page="base.jsp" />
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
-                    <form role="form" method="POST" action="index.html">
+                    <form action="ModifyPasswordServlet" role="form" method="POST">
                         <div>
                             <label for="name">原密码</label>
                             <input type="text" class="form-control" name="password" />
