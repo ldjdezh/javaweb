@@ -119,4 +119,44 @@
     <servlet-name>GetMobileServlet</servlet-name>
     <url-pattern>/GetMobileServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetClassifyServlet</display-name>
+    <servlet-name>GetClassifyServlet</servlet-name>
+    <servlet-class>cn.ldj.servlet.admin.GetClassifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetClassifyServlet</servlet-name>
+    <url-pattern>/admin/GetClassifyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddMadeServlet</display-name>
+    <servlet-name>AddMadeServlet</servlet-name>
+    <servlet-class>cn.ldj.servlet.admin.AddMadeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddMadeServlet</servlet-name>
+    <url-pattern>/admin/AddMadeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteMadeServlet</display-name>
+    <servlet-name>DeleteMadeServlet</servlet-name>
+    <servlet-class>cn.ldj.servlet.admin.DeleteMadeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteMadeServlet</servlet-name>
+    <url-pattern>/admin/DeleteMadeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetAllPhone</display-name>
+    <servlet-name>GetAllPhone</servlet-name>
+    <servlet-class>cn.ldj.servlet.admin.GetAllPhone</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllPhone</servlet-name>
+    <url-pattern>/admin/GetAllPhone</url-pattern>
+  </servlet-mapping>
 </web-app>

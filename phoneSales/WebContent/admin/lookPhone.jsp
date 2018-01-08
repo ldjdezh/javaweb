@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 
+<%@ page import="java.util.*,cn.ldj.domain.*" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -31,7 +33,9 @@
 
         <div class="row">
             <jsp:include page="base.jsp" flush="true" />
-            
+            <%
+            PageMobile pm = (PageMobile)request.getAttribute("pm");
+            %>
             <div class="col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -45,44 +49,58 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <%
+                            List<MobileForm> list = pm.getList();
+                            for(MobileForm mf:list) {
+                            %>
                                 <tr>
-                                    <td><img class="img-thumbnail" src="../img/努比亚z17.jpg" /></td>
-                                    <td>努比亚z17</td>
-                                    <td>3999</td>
+                                    <td><img class="img-thumbnail" src="<%=request.getContextPath() %><%=mf.getMobile_pic() %>" /></td>
+                                    <td><%=mf.getMobile_name() %></td>
+                                    <td><%=mf.getMobile_price() %></td>
                                     <td>
-                                        <form role="form">
+                                        
                                             <div class="form-group">
+                                            <form action="" method="post" role="form">
+                                            <input value="<%=mf.getMobile_version() %>" type="hidden" name="version"/>
                                                 <button class="btn btn-default btn-sm" type="submit">
                                                     修改
                                                 </button>
+                                            </form>
+                                            <form action="" method="post" role="form">
+                                            <input value="<%=mf.getMobile_version() %>" type="hidden" name="version"/>
                                                 <button class="btn btn-default btn-sm" type="submit">
                                                     删除
                                                 </button>
+                                            </form>
+                                            <form action="" method="post" role="form">
+                                            <input value="<%=mf.getMobile_version() %>" type="hidden" name="version"/>
                                                 <button class="btn btn-default btn-sm" type="submit">
                                                     查看详情
                                                 </button>
+                                            </form>
                                             </div>
-                                        </form>
+                                        
                                     </td>
                                 </tr>
+                                <%} %>
                             </tbody>
                         </table>
-                        <span class="label label-info">共10页</span>
-                        <span class="label label-info">当前在第1页</span>
-                        <span class="label label-info">每页显示5条信息</span>
+                        <span class="label label-info">共<%=pm.getPageNum() %>页</span>
+                        <span class="label label-info">当前在第<%=pm.getCurrentPage() %>页</span>
+                        <span class="label label-info">每页显示<%=pm.getPageSize() %>条信息</span>
                         <ul class="pager">
                             <li class="previous">
-                                <a href="#">&larr; 前一页</a>
+                                <a href="GetAllPhone?page=<%=pm.getPre()%>">&larr; 前一页</a>
                             </li>
                             <li class="next">
-                                <a href="#">后一页 &rarr;</a>
+                                <a href="GetAllPhone?page=<%=pm.getNext()%>">后一页 &rarr;</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-
+</div>
 
         <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>

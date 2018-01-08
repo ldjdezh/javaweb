@@ -30,17 +30,17 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form">
+                        <form action="AdminLoginServlet" method="post" class="form-horizontal" role="form">
                             <div class="form-group">
                                 <label for="firstname" class="col-sm-4 control-label">管理员账号</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="firstname"/>
+                                    <input name="username" type="text" class="form-control"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="lastname" class="col-sm-4 control-label">密码</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="lastname" />
+                                    <input name="password" type="text" class="form-control" />
                                 </div>
                             </div>
                             <div class="form-group">

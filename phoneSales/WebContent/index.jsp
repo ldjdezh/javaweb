@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
-                    <h1>欢迎光临“智多星”手机销售网</h1>
+                    <img src="img/welcome.jpg"/>
                 </div>
             </div>
         </div>

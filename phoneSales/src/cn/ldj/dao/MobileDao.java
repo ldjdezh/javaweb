@@ -21,4 +21,6 @@ public interface MobileDao {
 	List<MobileForm> getMobileFormListByName(String name, int begin, int end) throws Exception;
 
 	List<MobileForm> getMobileFormListByPrice(int low, int high, int begin, int end) throws Exception;
+
+	int getTotal() throws Exception;
 }

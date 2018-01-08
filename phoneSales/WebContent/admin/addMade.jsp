@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" %>
+<%@ page import="java.util.*,cn.ldj.domain.*" %>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -35,17 +36,25 @@
             <div class="col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form role="form">
+                        <form action="AddMadeServlet" method="post" role="form">
                             <label for="name">输入新的手机类别</label>
-                            <input type="text" class="form-control"/>
+                            <input name="class" type="text" class="form-control"/>
                             <button type="submit" class="btn btn-default">添加</button>
                         </form>
                         <br/>
-                        <form role="form">
+                        <form action="DeleteMadeServlet" method="post" role="form">
                             <label for="name">选择要删除的手机类别</label>
-                            <select class="form-control">
-                                <option>vivo</option>
-                                <option>oppo</option>
+                            <%
+                            List<MobileClassify> list = (List<MobileClassify>)request.getAttribute("list");
+                            %>
+                            <select name="class" class="form-control">
+                            	<%
+                            	for(MobileClassify mc:list) {
+                            	%>
+                                <option value="<%=mc.getMid() %>"><%=mc.getName() %></option>
+                                <%
+                            	}
+                                %>
                               </select>
                             <button type="submit" class="btn btn-default">删除</button>
                         </form>
@@ -53,7 +62,7 @@
                 </div>
             </div>
         </div>
-
+</div>
 
         <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
