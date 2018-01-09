@@ -38,29 +38,35 @@
                     <br/>
                     <div id="myTabContent" class="tab-content">
                         <div class="tab-pane fade in active" id="version">
+                        <form action="MobileServlet?method=getListByVersion" role="form" method="post">
                             <label>
                                 请输入手机版本号
                             </label>
-                            <input type="text" />
+                            <input name="version" type="text" />
                             <button type="submit">提交</button>
+                        </form>
                         </div>
                         <div class="tab-pane fade" id="name">
+                        <form action="MobileServlet?method=getListByName" role="form" method="post">
                             <label>
                                 请输入手机名称
                             </label>
-                            <input type="text" />
+                            <input name="name" type="text" />
                             <button type="submit">提交</button>
+                        </form>
                         </div>
                         <div class="tab-pane fade" id="money">
+                        <form action="MobileServlet?method=getListByPrice" role="form" method="post">
                             <label>
                                 请输入最低价格
                             </label>
-                            <input type="text" />
+                            <input name="low" type="text" />
                             <label>
                                 请输入最高价格
                             </label>
-                            <input type="text" />
+                            <input name="high" type="text" />
                             <button type="submit">提交</button>
+                        </form>
                         </div>
 
                     </div>

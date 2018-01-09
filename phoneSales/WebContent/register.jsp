@@ -26,7 +26,7 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="well">
                     <h2>用户注册</h2>
-                    <form action="RegisterServlet" method="post" role="form">
+                    <form action="UserServlet?method=register" method="post" role="form">
                         <div>
                             <div class="form-group">
                                 <label for="name">用户名称</label>

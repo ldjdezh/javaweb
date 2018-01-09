@@ -27,7 +27,7 @@
                                         <span class="glyphicon glyphicon-log-in"></span> 登录</a>
                                 </li>
                                 <li>
-                                    <a href="LookMobileServlet">
+                                    <a href="MobileServlet?method=getClassifyList">
                                         <span class="glyphicon glyphicon-phone"></span>浏览手机</a>
                                 </li>
                                 <li>
@@ -39,11 +39,11 @@
                                         <span class="glyphicon glyphicon-shopping-cart"></span>查看购物车</a>
                                 </li>
                                 <li>
-                                    <a href="lookOrderForm.jsp">
+                                    <a href="OrderServlet?method=getList">
                                         <span class="glyphicon glyphicon-th-list"></span>查看订单</a>
                                 </li>
                                 <li>
-                                    <a href="GetInfoServlet">
+                                    <a href="UserServlet?method=getInfo">
                                         <span class="glyphicon glyphicon-edit"></span>修改注册信息</a>
                                 </li>
                                 <li>
@@ -51,7 +51,7 @@
                                         <span class="glyphicon glyphicon-cog"></span>修改密码</a>
                                 </li>
                                 <li>
-                                    <a href="ExitServlet">
+                                    <a href="UserServlet?method=exit">
                                         <span class="glyphicon glyphicon-log-out"></span>退出</a>
                                 </li>
                             </ul>

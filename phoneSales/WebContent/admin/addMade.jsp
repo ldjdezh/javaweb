@@ -36,13 +36,13 @@
             <div class="col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form action="AddMadeServlet" method="post" role="form">
+                        <form action="AdminServlet?method=addMade" method="post" role="form">
                             <label for="name">输入新的手机类别</label>
                             <input name="class" type="text" class="form-control"/>
                             <button type="submit" class="btn btn-default">添加</button>
                         </form>
                         <br/>
-                        <form action="DeleteMadeServlet" method="post" role="form">
+                        <form action="AdminServlet?method=deleteMade" method="post" role="form">
                             <label for="name">选择要删除的手机类别</label>
                             <%
                             List<MobileClassify> list = (List<MobileClassify>)request.getAttribute("list");

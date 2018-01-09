@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" %>
+<%@ page import="java.util.*,cn.ldj.domain.*" %>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -20,40 +21,31 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
-                    <form role="form">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <input type="checkbox" value="" />全选
-                                    </th>
                                     <th>手机名称</th>
-                                    <th>购买数量</th>
-                                    <th>总额</th>
+                                    <th>单价</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <%
+                                List<ShopCar> carList = (List<ShopCar>)request.getSession().getAttribute("carList");
+                                
+                                double price = 0;
+                                for(ShopCar shopCar:carList) {
+                                	double p = shopCar.getMf().getMobile_price();
+                                	price += p;
+                                %>
                                 <tr>
-                                    <td>
-                                        <input type="checkbox" value="" />
-                                    </td>
-                                    <td>360 N6</td>
-                                    <td>1</td>
-                                    <td>1399</td>
+                                    <td><%=shopCar.getMf().getMobile_name() %></td>
+                                    <td><%=p %></td>
                                 </tr>
+                                <%
+                                }
+                                %>
                             </tbody>
                         </table>
-                        <span class="label label-info">共10页</span>
-                        <span class="label label-info">当前在第1页</span>
-                        <span class="label label-info">每页显示5条信息</span>
-                        <ul class="pager">
-                            <li class="previous">
-                                <a href="#">&larr; 前一页</a>
-                            </li>
-                            <li class="next">
-                                <a href="#">后一页 &rarr;</a>
-                            </li>
-                        </ul>
                         <button data-toggle="modal" data-target="#myModal3" type="button" class="btn btn-default btn-lg">立即购买</button>
 
                         <div>
@@ -64,10 +56,12 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                             <h4 class="modal-title" id="myModalLabel">确定购买</h4>
                                         </div>
-                                        <div class="modal-body">共1399元</div>
+                                        <div class="modal-body">共<%=price %>元</div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                            <form action="OrderServlet?method=addOrder" method="post" role="form">
                                             <button type="submit" class="btn btn-primary">立即购买</button>
+                                        	</form>
                                         </div>
                                     </div>
                                     <!-- /.modal-content -->
@@ -75,7 +69,6 @@
                                 <!-- /.modal -->
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>

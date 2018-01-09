@@ -375,7 +375,7 @@ public class AdminDaoImpl implements AdminDao {
 			/*
 			 * 二、创建PreparedStatement
 			 */
-			String sql = "select * mobileform where mobile_version = ?";
+			String sql = "select * from mobileform where mobile_version = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, version);
 

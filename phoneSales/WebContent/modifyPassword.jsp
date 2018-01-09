@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
-                    <form action="ModifyPasswordServlet" role="form" method="POST">
+                    <form action="UserServlet?method=modifyPassword" role="form" method="POST">
                         <div>
                             <label for="name">原密码</label>
                             <input type="text" class="form-control" name="password" />

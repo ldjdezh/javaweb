@@ -21,7 +21,7 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="well">
                     <h2>用户登录</h2>
-                    <form action="LoginServlet" method="POST" role="form">
+                    <form action="UserServlet?method=login" method="POST" role="form">
                         <%
                         String lognameInfo = (String)request.getAttribute("lognameInfo");
                         String passwordInfo = (String)request.getAttribute("passwordInfo");

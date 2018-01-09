@@ -29,10 +29,19 @@ public class MobileServiceImpl implements MobileService {
 		pm.setPageSize(5); // 设置每页在大小
 		int total = mobileDao.getTotal();
 		pm.setTotal(total); // 设置共有多少条记录
-		int num = (int) Math.ceil(total / 5);
+		int num = total % 5 == 0 ? (total / 5) : (total / 5 + 1);
 		pm.setPageNum(num); // 设置共有多少页
-		int pre = pageNum - 1 == 0 ? 1 : pageNum - 1; // 设置前一页的页码
-		int next = pageNum + 1 > num ? num : pageNum + 1; // 设置后一页的页码
+		int pre = pageNum - 1; // 设置前一页的页码
+
+		if (pre <= 0) {
+			pre = 1;
+		}
+
+		int next = pageNum + 1; // 设置后一页的页码
+
+		if (next > num) {
+			next = num;
+		}
 		pm.setPre(pre);
 		pm.setNext(next);
 
@@ -51,10 +60,19 @@ public class MobileServiceImpl implements MobileService {
 		pm.setPageSize(5); // 设置每页在大小
 		int total = mobileDao.getTotal();
 		pm.setTotal(total); // 设置共有多少条记录
-		int num = (int) Math.ceil(total / 5);
+		int num = total % 5 == 0 ? (total / 5) : (total / 5 + 1);
 		pm.setPageNum(num); // 设置共有多少页
-		int pre = pageNum - 1 == 0 ? 1 : pageNum - 1; // 设置前一页的页码
-		int next = pageNum + 1 > num ? num : pageNum + 1; // 设置后一页的页码
+		int pre = pageNum - 1; // 设置前一页的页码
+
+		if (pre <= 0) {
+			pre = 1;
+		}
+
+		int next = pageNum + 1; // 设置后一页的页码
+
+		if (next > num) {
+			next = num;
+		}
 		pm.setPre(pre);
 		pm.setNext(next);
 
@@ -73,10 +91,19 @@ public class MobileServiceImpl implements MobileService {
 		pm.setPageSize(5); // 设置每页在大小
 		int total = mobileDao.getTotal();
 		pm.setTotal(total); // 设置共有多少条记录
-		int num = (int) Math.ceil(total / 5);
+		int num = total % 5 == 0 ? (total / 5) : (total / 5 + 1);
 		pm.setPageNum(num); // 设置共有多少页
-		int pre = pageNum - 1 == 0 ? 1 : pageNum - 1; // 设置前一页的页码
-		int next = pageNum + 1 > num ? num : pageNum + 1; // 设置后一页的页码
+		int pre = pageNum - 1; // 设置前一页的页码
+
+		if (pre <= 0) {
+			pre = 1;
+		}
+
+		int next = pageNum + 1; // 设置后一页的页码
+
+		if (next > num) {
+			next = num;
+		}
 		pm.setPre(pre);
 		pm.setNext(next);
 
@@ -95,10 +122,19 @@ public class MobileServiceImpl implements MobileService {
 		pm.setPageSize(5); // 设置每页在大小
 		int total = mobileDao.getTotal();
 		pm.setTotal(total); // 设置共有多少条记录
-		int num = (int) Math.ceil(total / 5);
+		int num = total % 5 == 0 ? (total / 5) : (total / 5 + 1);
 		pm.setPageNum(num); // 设置共有多少页
-		int pre = pageNum - 1 == 0 ? 1 : pageNum - 1; // 设置前一页的页码
-		int next = pageNum + 1 > num ? num : pageNum + 1; // 设置后一页的页码
+		int pre = pageNum - 1; // 设置前一页的页码
+
+		if (pre <= 0) {
+			pre = 1;
+		}
+
+		int next = pageNum + 1; // 设置后一页的页码
+
+		if (next > num) {
+			next = num;
+		}
 		pm.setPre(pre);
 		pm.setNext(next);
 
@@ -117,10 +153,19 @@ public class MobileServiceImpl implements MobileService {
 		pm.setPageSize(5); // 设置每页在大小
 		int total = mobileDao.getTotal();
 		pm.setTotal(total); // 设置共有多少条记录
-		int num = (int) Math.ceil(total / 5);
+		int num = total % 5 == 0 ? (total / 5) : (total / 5 + 1);
 		pm.setPageNum(num); // 设置共有多少页
-		int pre = pageNum - 1 == 0 ? 1 : pageNum - 1; // 设置前一页的页码
-		int next = pageNum + 1 > num ? num : pageNum + 1; // 设置后一页的页码
+		int pre = pageNum - 1; // 设置前一页的页码
+
+		if (pre <= 0) {
+			pre = 1;
+		}
+
+		int next = pageNum + 1; // 设置后一页的页码
+
+		if (next > num) {
+			next = num;
+		}
 		pm.setPre(pre);
 		pm.setNext(next);
 

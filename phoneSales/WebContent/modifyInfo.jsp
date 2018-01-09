@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
-                    <form action="ModifyInfoServlet" method="post" role="form">
+                    <form action="UserServlet?method=modifyInfo" method="post" role="form">
                         <div>
                             <label for="name">联系电话</label>
                             <input value='<jsp:getProperty property="phone" name="user"/>' name="phone" type="text" class="form-control" />

@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 
+<%@ page import="java.util.*,cn.ldj.domain.*" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -17,6 +19,21 @@
     <div class="container">
         <jsp:include page="base.jsp" />
 
+		<%
+		PageMobile pm = (PageMobile)request.getAttribute("pm");
+		String clazz = (String)request.getAttribute("class");
+		String version=(String)request.getAttribute("version");
+		String name = (String)request.getAttribute("name");
+		String low = (String)request.getAttribute("low");
+		String high = (String)request.getAttribute("high");
+		
+		clazz = (clazz == null)?"":clazz;
+		version = (version == null)?"":version;
+		name = (name == null)?"":name;
+		low = (low== null)?"":low;
+		high = (high==null)?"":high;
+		List<MobileForm> list = pm.getList();
+		%>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
@@ -33,41 +50,50 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <%
+                        for(MobileForm mf:list) {
+                        %>
                             <tr>
-                                <td>csss</td>
+                                <td><%=mf.getMobile_version() %></td>
                                 <td>
-                                    <img src="img/360N6Pro.jpg" class="img-thumbnail">
+                                    <img src="<%=request.getContextPath() %><%=mf.getMobile_pic() %>" class="img-thumbnail">
                                 </td>
-                                <td>苹果999</td>
-                                <td>53453</td>
+                                <td><%=mf.getMobile_name() %></td>
+                                <td><%=mf.getMobile_price() %></td>
                                 <td>
-                                    <button type="button" class="btn btn-default btn-sm">点击查看</button>
+                                <form action="MobileServlet?method=showDetail" role="form" method="post">
+                                <input name="version" type="hidden" value="<%=mf.getMobile_version() %>" />
+                                    <button type="submit" class="btn btn-default btn-sm">点击查看</button>
+                               	</form>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-default btn-sm">添加</button>
+                                <form action="ShopCarServlet?method=addShop" role="form" method="post">
+                                <input name="version" type="hidden" value="<%=mf.getMobile_version() %>" />
+                                    <button type="submit" class="btn btn-default btn-sm">添加</button>
+                                </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>csss</td>
-                                <td>
-                                    <img src="img/oppor11s.jpg" class="img-thumbnail">
-                                </td>
-                                <td>小米999</td>
-                                <td>53453</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                        <%
+                       	}
+                        %>
                         </tbody>
                     </table>
-                    <span class="label label-info">共10页</span>
-                    <span class="label label-info">当前在第1页</span>
-                    <span class="label label-info">每页显示5条信息</span>
+                    <span class="label label-info">共<%=pm.getPageNum() %>页</span>
+                    <span class="label label-info">当前在第<%=pm.getCurrentPage() %>页</span>
+                    <span class="label label-info">每页显示<%=pm.getPageSize() %>条信息</span>
                     <ul class="pager">
                         <li class="previous">
-                            <a href="#">&larr; 前一页</a>
+                            <a href="MobileServlet?method=getList&page=<%=pm.getPre()%>
+                            &class=<%=clazz%>&version=<%=version%>&name=<%=name%>&low=<%=low%>&
+                            high=<%=high%>">
+                            &larr; 前一页
+                            </a>
+
                         </li>
                         <li class="next">
-                            <a href="#">后一页 &rarr;</a>
+                            <a href="MobileServlet?method=getList&page=<%=pm.getNext()%>
+                            &class=<%=clazz%>&version=<%=version%>&name=<%=name%>&low=<%=low%>&
+                            high=<%=high%>">后一页 &rarr;</a>
                         </li>
                     </ul>
                 </div>

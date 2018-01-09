@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
-                    <form role="form">
+                    <form action="MobileServlet?method=getListByClassify" method="post" role="form">
                         <div class="form-group">
                             <label for="name">选择某类手机</label>
                             <select name="class" class="form-control">

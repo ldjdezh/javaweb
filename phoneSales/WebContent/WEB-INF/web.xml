@@ -11,23 +11,33 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>RegisterServlet</display-name>
-    <servlet-name>RegisterServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.RegisterServlet</servlet-class>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>cn.ldj.servlet.UserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>RegisterServlet</servlet-name>
-    <url-pattern>/RegisterServlet</url-pattern>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>LoginServlet</display-name>
-    <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.LoginServlet</servlet-class>
+    <display-name>MobileServlet</display-name>
+    <servlet-name>MobileServlet</servlet-name>
+    <servlet-class>cn.ldj.servlet.MobileServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/LoginServlet</url-pattern>
+    <servlet-name>MobileServlet</servlet-name>
+    <url-pattern>/MobileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShopCarServlet</display-name>
+    <servlet-name>ShopCarServlet</servlet-name>
+    <servlet-class>cn.ldj.servlet.ShopCarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShopCarServlet</servlet-name>
+    <url-pattern>/ShopCarServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -41,25 +51,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ExitServlet</display-name>
-    <servlet-name>ExitServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.ExitServlet</servlet-class>
+    <display-name>AdminServlet</display-name>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>cn.ldj.servlet.admin.AdminServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ExitServlet</servlet-name>
-    <url-pattern>/ExitServlet</url-pattern>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/admin/AdminServlet</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>AdminLoginServlet</display-name>
-    <servlet-name>AdminLoginServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.admin.AdminLoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AdminLoginServlet</servlet-name>
-    <url-pattern>/admin/AdminLoginServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
+  
+    <servlet>
     <description></description>
     <display-name>AddPhoneServlet</display-name>
     <servlet-name>AddPhoneServlet</servlet-name>
@@ -69,94 +70,5 @@
     <servlet-name>AddPhoneServlet</servlet-name>
     <url-pattern>/admin/AddPhoneServlet</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>LookMobileServlet</display-name>
-    <servlet-name>LookMobileServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.LookMobileServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>LookMobileServlet</servlet-name>
-    <url-pattern>/LookMobileServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ModifyInfoServlet</display-name>
-    <servlet-name>ModifyInfoServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.ModifyInfoServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ModifyInfoServlet</servlet-name>
-    <url-pattern>/ModifyInfoServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>GetInfoServlet</display-name>
-    <servlet-name>GetInfoServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.GetInfoServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>GetInfoServlet</servlet-name>
-    <url-pattern>/GetInfoServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ModifyPasswordServlet</display-name>
-    <servlet-name>ModifyPasswordServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.ModifyPasswordServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ModifyPasswordServlet</servlet-name>
-    <url-pattern>/ModifyPasswordServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>GetMobileServlet</display-name>
-    <servlet-name>GetMobileServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.GetMobileServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>GetMobileServlet</servlet-name>
-    <url-pattern>/GetMobileServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>GetClassifyServlet</display-name>
-    <servlet-name>GetClassifyServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.admin.GetClassifyServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>GetClassifyServlet</servlet-name>
-    <url-pattern>/admin/GetClassifyServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>AddMadeServlet</display-name>
-    <servlet-name>AddMadeServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.admin.AddMadeServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AddMadeServlet</servlet-name>
-    <url-pattern>/admin/AddMadeServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>DeleteMadeServlet</display-name>
-    <servlet-name>DeleteMadeServlet</servlet-name>
-    <servlet-class>cn.ldj.servlet.admin.DeleteMadeServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteMadeServlet</servlet-name>
-    <url-pattern>/admin/DeleteMadeServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>GetAllPhone</display-name>
-    <servlet-name>GetAllPhone</servlet-name>
-    <servlet-class>cn.ldj.servlet.admin.GetAllPhone</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>GetAllPhone</servlet-name>
-    <url-pattern>/admin/GetAllPhone</url-pattern>
-  </servlet-mapping>
+
 </web-app>

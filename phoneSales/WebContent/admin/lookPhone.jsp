@@ -60,20 +60,23 @@
                                     <td>
                                         
                                             <div class="form-group">
-                                            <form action="" method="post" role="form">
+                                            <form action="AdminServlet?method=getPhone" method="post" role="form">
                                             <input value="<%=mf.getMobile_version() %>" type="hidden" name="version"/>
+                                            <input value="u" type="hidden" name="type"/>
                                                 <button class="btn btn-default btn-sm" type="submit">
                                                     修改
                                                 </button>
                                             </form>
-                                            <form action="" method="post" role="form">
+                                            <form action="AdminServlet?method=getPhone" method="post" role="form">
                                             <input value="<%=mf.getMobile_version() %>" type="hidden" name="version"/>
+                                            <input value="d" type="hidden" name="type"/>
                                                 <button class="btn btn-default btn-sm" type="submit">
                                                     删除
                                                 </button>
                                             </form>
-                                            <form action="" method="post" role="form">
+                                            <form action="AdminServlet?method=getPhone" method="post" role="form">
                                             <input value="<%=mf.getMobile_version() %>" type="hidden" name="version"/>
+                                            <input value="c" type="hidden" name="type"/>
                                                 <button class="btn btn-default btn-sm" type="submit">
                                                     查看详情
                                                 </button>
@@ -90,10 +93,10 @@
                         <span class="label label-info">每页显示<%=pm.getPageSize() %>条信息</span>
                         <ul class="pager">
                             <li class="previous">
-                                <a href="GetAllPhone?page=<%=pm.getPre()%>">&larr; 前一页</a>
+                                <a href="AdminServlet?method=getAll&page=<%=pm.getPre()%>">&larr; 前一页</a>
                             </li>
                             <li class="next">
-                                <a href="GetAllPhone?page=<%=pm.getNext()%>">后一页 &rarr;</a>
+                                <a href="AdminServlet?method=getAll&page=<%=pm.getNext()%>">后一页 &rarr;</a>
                             </li>
                         </ul>
                     </div>

@@ -87,7 +87,7 @@ public class MobileDaoImpl implements MobileDao {
 			/*
 			 * 二、创建PreparedStatement
 			 */
-			String sql = "select * mobileform where mobile_version = ?";
+			String sql = "select * from mobileform where mobile_version = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, version);
 
@@ -321,9 +321,9 @@ public class MobileDaoImpl implements MobileDao {
 			/*
 			 * 二、创建PreparedStatement
 			 */
-			String sql = "select * from mobileform where mobile_version like %?% limit ?,?";
+			String sql = "select * from mobileform where mobile_version like ? limit ?,?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, version);
+			pstmt.setString(1, "%"+version+"%");
 			pstmt.setInt(2, begin);
 			pstmt.setInt(3, end);
 
@@ -385,9 +385,9 @@ public class MobileDaoImpl implements MobileDao {
 			/*
 			 * 二、创建PreparedStatement
 			 */
-			String sql = "select * from mobileform where mobile_name like %?% limit ?,?";
+			String sql = "select * from mobileform where mobile_name like ? limit ?,?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, name);
+			pstmt.setString(1, "%"+name+"%");
 			pstmt.setInt(2, begin);
 			pstmt.setInt(3, end);
 
@@ -396,6 +396,7 @@ public class MobileDaoImpl implements MobileDao {
 
 			while (rs.next()) {
 				String version = rs.getString(1);
+				String n = rs.getString(2);
 				String made = rs.getString(3);
 				double price = rs.getDouble(4);
 				String mess = rs.getString(5);
@@ -405,7 +406,7 @@ public class MobileDaoImpl implements MobileDao {
 
 				MobileForm mf = new MobileForm();
 				mf.setMobile_version(version);
-				mf.setMobile_name(name);
+				mf.setMobile_name(n);
 				mf.setMobile_made(made);
 				mf.setMobile_price(price);
 				mf.setMobile_mess(mess);
@@ -513,6 +514,7 @@ public class MobileDaoImpl implements MobileDao {
 			String sql = "select count(*) from mobileform";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
+			rs.next();
 			int total = rs.getInt(1);
 			
 			return total;

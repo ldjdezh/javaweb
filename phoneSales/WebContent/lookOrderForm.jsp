@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" %>
+<%@ page import="java.util.*,cn.ldj.domain.*" %>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -31,27 +32,36 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <%
+                        PageOrder po = (PageOrder)request.getAttribute("po");
+                        List<OrderForm> list = po.getList();
+                        
+                        for(OrderForm of:list){
+                        %>
+                        
                             <tr>
-                                <td>001</td>
-                                <td>360 N6</td>
-                                <td>1</td>
-                                <td>1399</td>
+                                <td><%=of.getOid() %></td>
+                                <td><%=of.getMobileForm().getMobile_name() %></td>
+                                <td><%=of.getNum() %></td>
+                                <td><%=of.getSum() %></td>
                                 <td>
                                     正在发货中
-                                    <button type="button" class="btn btn-info btn-xs">申请退货</button>
                                 </td>
                             </tr>
+                            <%
+                        }
+                            %>
                         </tbody>
                     </table>
-                    <span class="label label-info">共10页</span>
-                    <span class="label label-info">当前在第1页</span>
-                    <span class="label label-info">每页显示5条信息</span>
+                    <span class="label label-info">共<%=po.getPageNum() %>页</span>
+                    <span class="label label-info">当前在第<%=po.getCurrentPage() %>页</span>
+                    <span class="label label-info">每页显示<%=po.getPageSize() %>条信息</span>
                     <ul class="pager">
                         <li class="previous">
-                            <a href="#">&larr; 前一页</a>
+                            <a href="OrderServlet?method=getList&page=<%=po.getPre()%>">&larr; 前一页</a>
                         </li>
                         <li class="next">
-                            <a href="#">后一页 &rarr;</a>
+                            <a href="OrderServlet?method=getList&page=<%=po.getNext()%>">后一页 &rarr;</a>
                         </li>
                     </ul>
                 </div>

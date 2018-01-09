@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 
+<%@ page import="java.util.*,cn.ldj.domain.*" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -29,6 +31,9 @@
             </div>
         </div>
 
+		<%
+		MobileForm mf = (MobileForm)request.getAttribute("mf");
+		%>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
@@ -39,38 +44,38 @@
                                     <td>
                                         <label for="name">手机版本号</label>
                                     </td>
-                                    <td>001</td>
+                                    <td><%=mf.getMobile_version() %></td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label for="name">手机名称</label>
                                     </td>
-                                    <td>小米6</td>
+                                    <td><%=mf.getMobile_name() %></td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label for="name">手机制造商</label>
                                     </td>
-                                    <td>小米公司</td>
+                                    <td><%=mf.getMobile_made() %></td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label for="name">手机价格</label>
                                     </td>
-                                    <td>1234</td>
+                                    <td><%=mf.getMobile_price() %></td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label for="name">手机信息</label>
                                     </td>
-                                    <td>呵呵</td>
+                                    <td><%=mf.getMobile_mess() %></td>
                                 </tr>
                             </tbody>
                         </table>
                         <div>
                             <label for="inputfile">手机图片</label>
                             <br/>
-                            <img src="../img/vivox20.jpg" class="img-thumbnail">
+                            <img src="<%=request.getContextPath() %><%=mf.getMobile_pic() %>" class="img-thumbnail">
                         </div>
                         <button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default">删除</button>
 
@@ -108,7 +113,7 @@
                     </div>
                 </div>
             </div>
-
+</div>
 
             <script src="../js/jquery.min.js"></script>
             <script src="../js/bootstrap.min.js"></script>

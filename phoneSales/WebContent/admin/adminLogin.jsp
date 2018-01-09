@@ -30,7 +30,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form action="AdminLoginServlet" method="post" class="form-horizontal" role="form">
+                        <form action="AdminServlet?method=adminLogin" method="post" class="form-horizontal" role="form">
                             <div class="form-group">
                                 <label for="firstname" class="col-sm-4 control-label">管理员账号</label>
                                 <div class="col-sm-8">

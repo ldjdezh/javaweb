@@ -142,4 +142,58 @@ public class UserDaoImpl implements UserDao {
 		}
 	}
 
+	@Override
+	public User getUid(int uid) throws Exception {
+		Connection con = null;// 定义引用
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			/*
+			 * 一、得到连接
+			 */
+			con = JdbcUtils.getConnection();
+
+			/*
+			 * 二、创建PreparedStatement
+			 */
+
+			String sql = "SELECT * FROM user WHERE uid = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, uid);
+			rs = pstmt.executeQuery();
+
+			if (!rs.next()) {
+				return null;
+			}
+
+			String logname = rs.getString("logname");
+			String rPassword = rs.getString("password");
+			String rPhone = rs.getString("phone");
+			String rAddress = rs.getString("address");
+			String rRealname = rs.getString("realname");
+
+			User user = new User();
+			user.setUid(uid);
+			user.setLogname(logname);
+			user.setPassword(rPassword);
+			user.setAddress(rAddress);
+			user.setPhone(rPhone);
+			user.setRealname(rRealname);
+
+			return user;
+
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		} finally {
+			// 关闭
+			if (rs != null)
+				rs.close();
+			if (pstmt != null)
+				pstmt.close();
+			if (con != null)
+				con.close();
+		}
+	}
+
 }

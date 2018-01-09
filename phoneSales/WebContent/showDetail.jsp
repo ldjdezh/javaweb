@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 
+<%@ page import="cn.ldj.domain.*" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -17,16 +19,19 @@
     <div class="container">
         <jsp:include page="base.jsp" />
 
+		<%
+		MobileForm mf = (MobileForm)request.getAttribute("mf");
+		%>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="well">
                     <div class="media">
                         <a class="media-left" href="#">
-                            <img class="media-object" src="img/小米6.jpg" alt="媒体对象">
+                            <img class="media-object" src="<%=request.getContextPath() %><%=mf.getMobile_pic() %>" alt="媒体对象">
                         </a>
                         <div class="media-body">
-                            <h3 class="media-heading">360 N6</h3>
-                            <p class="text-info">青年新旗舰！5030mAh大电池/18W快充/5.93英寸全面屏/骁龙630/赠《全名枪战》豪杰礼包1张</p>
+                            <h3 class="media-heading"><%=mf.getMobile_name() %></h3>
+                            <p class="text-info"><%=mf.getMobile_mess() %></p>
                             <table class="table table-condensed">
                                 <thead>
                                     <tr>
@@ -36,13 +41,14 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>360公司</td>
-                                        <td>￥1399</td>
+                                        <td><%=mf.getMobile_made() %></td>
+                                        <td>￥<%=mf.getMobile_price() %></td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <form role="form">
-                                <button type="button" class="btn btn-default btn-lg">加入购物车</button>
+                            <form method="post" action="ShopCarServlet?method=addShop" role="form">
+                            <input name="version" type="hidden" value="<%=mf.getMobile_version() %>" />
+                                <button type="submit" class="btn btn-default btn-lg">加入购物车</button>
                             </form>
                         </div>
                     </div>

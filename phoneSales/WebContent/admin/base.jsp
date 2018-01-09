@@ -12,13 +12,13 @@
                                 <a href="#">查看订单</a>
                             </li>
                             <li>
-                                <a href="GetClassifyServlet?method=addPhone">添加手机</a>
+                                <a href="AdminServlet?method=getClassify&type=addPhone">添加手机</a>
                             </li>
                             <li>
-                                <a href="GetAllPhone">查看手机</a>
+                                <a href="AdminServlet?method=getAll">查看手机</a>
                             </li>
                             <li>
-                                <a href="GetClassifyServlet?method=addMade">手机类别</a>
+                                <a href="AdminServlet?method=getClassify&type=addMade">手机类别</a>
                             </li>
                             <!-- class="active"  -->
                         </ul>
