@@ -32,12 +32,12 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public PageOrder getList(int pageNum) throws Exception {
+	public PageOrder getList(int pageNum, int uid) throws Exception {
 		PageOrder po = new PageOrder();
 
 		po.setCurrentPage(pageNum); // 设置当前第几页
 		po.setPageSize(5); // 设置每页在大小
-		int total = orderDao.getTotal();
+		int total = orderDao.getTotal(uid);
 		po.setTotal(total); // 设置共有多少条记录
 		int num = total % 5 == 0 ? (total / 5) : (total / 5 + 1);
 		po.setPageNum(num); // 设置共有多少页
@@ -57,7 +57,7 @@ public class OrderServiceImpl implements OrderService {
 
 		int begin = (pageNum - 1) * 5;
 
-		List<OrderForm> list = orderDao.getOrderFormList(begin, 5);
+		List<OrderForm> list = orderDao.getOrderFormListByUid(uid, begin, 5);
 		po.setList(list);
 
 		return po;

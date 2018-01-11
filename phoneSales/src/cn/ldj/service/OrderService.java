@@ -10,5 +10,5 @@ public interface OrderService {
 
 	void addOrder(List<ShopCar> carList, User user) throws Exception;
 
-	PageOrder getList(int pageNum) throws Exception;
+	PageOrder getList(int pageNum,int uid) throws Exception;
 }

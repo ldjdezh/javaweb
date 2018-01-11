@@ -56,7 +56,7 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	@Override
-	public int getTotal() throws Exception {
+	public int getTotal(int uid) throws Exception {
 		Connection con = null;// 定义引用
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -70,8 +70,9 @@ public class OrderDaoImpl implements OrderDao {
 			/*
 			 * 二、创建PreparedStatement
 			 */
-			String sql = "select count(*) from orderform";
+			String sql = "select count(*) from orderform where uid=?";
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, uid);
 			rs = pstmt.executeQuery();
 			rs.next();
 			int total = rs.getInt(1);
@@ -92,7 +93,7 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	@Override
-	public List<OrderForm> getOrderFormList(int begin, int end) throws Exception {
+	public List<OrderForm> getOrderFormListByUid(int id, int begin, int end) throws Exception {
 		Connection con = null;// 定义引用
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -106,10 +107,11 @@ public class OrderDaoImpl implements OrderDao {
 			/*
 			 * 二、创建PreparedStatement
 			 */
-			String sql = "select * from orderform limit ?,?";
+			String sql = "select * from orderform where uid=? limit ?,?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, begin);
-			pstmt.setInt(2, end);
+			pstmt.setInt(1, id);
+			pstmt.setInt(2, begin);
+			pstmt.setInt(3, end);
 
 			rs = pstmt.executeQuery();
 			List<OrderForm> list = new ArrayList<OrderForm>();

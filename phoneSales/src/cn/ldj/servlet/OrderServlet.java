@@ -39,6 +39,8 @@ public class OrderServlet extends BaseServlet {
 	public void getList(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String strPage = request.getParameter("page");
+		User user = (User) request.getSession().getAttribute("user");
+		int uid = user.getUid();
 		int pageNum = 1;
 		
 		if(strPage != null) {
@@ -46,7 +48,7 @@ public class OrderServlet extends BaseServlet {
 		}
 		
 		try {
-			PageOrder po = orderService.getList(pageNum);
+			PageOrder po = orderService.getList(pageNum,uid);
 			request.setAttribute("po", po);
 			request.getRequestDispatcher("lookOrderForm.jsp").forward(request, response);
 		} catch (Exception e) {
