@@ -59,8 +59,7 @@
     <servlet-name>AdminServlet</servlet-name>
     <url-pattern>/admin/AdminServlet</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>AddPhoneServlet</display-name>
     <servlet-name>AddPhoneServlet</servlet-name>
@@ -70,5 +69,14 @@
     <servlet-name>AddPhoneServlet</servlet-name>
     <url-pattern>/admin/AddPhoneServlet</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <description></description>
+    <display-name>ModifyPhoneServlet</display-name>
+    <servlet-name>ModifyPhoneServlet</servlet-name>
+    <servlet-class>cn.ldj.servlet.admin.ModifyPhoneServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyPhoneServlet</servlet-name>
+    <url-pattern>/admin/ModifyPhoneServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

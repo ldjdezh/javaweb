@@ -20,7 +20,7 @@
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#">手机销售网后台系统</a>
+                            <a class="navbar-brand" href="manager.jsp">手机销售网后台系统</a>
                         </div>
                         <div>
                             <p class="navbar-text">添加手机</p>

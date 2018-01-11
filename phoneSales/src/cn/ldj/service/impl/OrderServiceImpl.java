@@ -4,7 +4,6 @@ import java.util.List;
 
 import cn.ldj.dao.OrderDao;
 import cn.ldj.dao.impl.OrderDaoImpl;
-import cn.ldj.domain.MobileForm;
 import cn.ldj.domain.OrderForm;
 import cn.ldj.domain.PageOrder;
 import cn.ldj.domain.ShopCar;
@@ -35,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public PageOrder getList(int pageNum) throws Exception {
 		PageOrder po = new PageOrder();
-		
+
 		po.setCurrentPage(pageNum); // 设置当前第几页
 		po.setPageSize(5); // 设置每页在大小
 		int total = orderDao.getTotal();
@@ -60,7 +59,7 @@ public class OrderServiceImpl implements OrderService {
 
 		List<OrderForm> list = orderDao.getOrderFormList(begin, 5);
 		po.setList(list);
-		
+
 		return po;
 	}
 

@@ -7,7 +7,9 @@ import cn.ldj.dao.admin.Impl.AdminDaoImpl;
 import cn.ldj.domain.Manager;
 import cn.ldj.domain.MobileClassify;
 import cn.ldj.domain.MobileForm;
+import cn.ldj.domain.OrderForm;
 import cn.ldj.domain.PageMobile;
+import cn.ldj.domain.PageOrder;
 import cn.ldj.service.admin.AdminService;
 
 public class AdminServiceImpl implements AdminService {
@@ -85,6 +87,38 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public void deleteMade(int mid) throws Exception {
 		adminDao.deleteMade(mid);
+	}
+
+	@Override
+	public PageOrder getList(int pageNum) throws Exception {
+		PageOrder po = new PageOrder();
+
+		po.setCurrentPage(pageNum); // 设置当前第几页
+		po.setPageSize(5); // 设置每页在大小
+		int total = adminDao.getTotalByOrder();
+		po.setTotal(total); // 设置共有多少条记录
+		int num = total % 5 == 0 ? (total / 5) : (total / 5 + 1);
+		po.setPageNum(num); // 设置共有多少页
+		int pre = pageNum - 1; // 设置前一页的页码
+
+		if (pre <= 0) {
+			pre = 1;
+		}
+
+		int next = pageNum + 1; // 设置后一页的页码
+
+		if (next > num) {
+			next = num;
+		}
+		po.setPre(pre);
+		po.setNext(next);
+
+		int begin = (pageNum - 1) * 5;
+
+		List<OrderForm> list = adminDao.getOrderFormList(begin, 5);
+		po.setList(list);
+
+		return po;
 	}
 
 }

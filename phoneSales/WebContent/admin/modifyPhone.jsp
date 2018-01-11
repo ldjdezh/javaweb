@@ -20,7 +20,7 @@
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#">手机销售网后台系统</a>
+                            <a class="navbar-brand" href="manager.jsp">手机销售网后台系统</a>
                         </div>
                         <div>
                             <p class="navbar-text">修改手机</p>
@@ -41,11 +41,8 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form action="" method="POST" role="form" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="name">手机版本号</label>
-                                <input value="<%=mf.getMobile_version() %>" name="version" type="text" class="form-control" />
-                            </div>
+                        <form action="ModifyPhoneServlet" method="POST" role="form" enctype="multipart/form-data">
+                            <input value="<%=mf.getMobile_version() %>" name="version" type="hidden" />
                             <div class="form-group">
                                 <label for="name">手机名称</label>
                                 <input value="<%=mf.getMobile_name() %>" name="name" type="text" class="form-control" />
@@ -68,7 +65,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">手机信息</label>
-                                <textarea value="<%=mf.getMobile_mess() %>" name="mess" class="form-control" rows="3"></textarea>
+                                <textarea name="mess" class="form-control" rows="3"><%=mf.getMobile_mess() %></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="inputfile">原手机图片</label>
@@ -107,6 +104,7 @@
                                         <!-- /.modal-content -->
                                     </div>
                                     <!-- /.modal -->
+                                </div>
                                 </div>
                         </form>
                         </div>

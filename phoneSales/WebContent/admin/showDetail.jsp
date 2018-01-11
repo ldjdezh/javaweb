@@ -21,7 +21,7 @@
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#">手机销售网后台系统</a>
+                            <a class="navbar-brand" href="manager.jsp">手机销售网后台系统</a>
                         </div>
                         <div>
                             <p class="navbar-text">手机详情</p>
@@ -38,7 +38,7 @@
                     <div class="panel-body">
                         <div class="media">
                             <a class="media-left" href="#">
-                                <img class="media-object" src="../img/小米6.jpg" alt="媒体对象">
+                                <img class="media-object" src="<%=request.getContextPath() %><%=mf.getMobile_pic() %>" alt="媒体对象">
                             </a>
                             <div class="media-body">
                                 <h3 class="media-heading"><%=mf.getMobile_name() %></h3>

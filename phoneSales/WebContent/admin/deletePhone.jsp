@@ -21,7 +21,7 @@
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#">手机销售网后台系统</a>
+                            <a class="navbar-brand" href="manager.jsp">手机销售网后台系统</a>
                         </div>
                         <div>
                             <p class="navbar-text">删除手机</p>
@@ -96,9 +96,10 @@
                                             确定删除?
                                         </div>
                                         <div class="modal-footer">
-                                            <form role="form">
+                                            <form action="AdminServlet?method=deletePhone" method="post" role="form">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                                                 </button>
+                                                <input value="<%=mf.getMobile_version() %>" name="version" type="hidden" />
                                                 <button type="submit" class="btn btn-primary">
                                                     提交
                                                 </button>

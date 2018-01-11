@@ -6,10 +6,10 @@
                     <div class="panel-body">
                         <ul class="nav nav-pills nav-stacked">
                             <li>
-                                <a href="#">管理员页面</a>
+                                <a href="manager.jsp">管理员页面</a>
                             </li>
                             <li>
-                                <a href="#">查看订单</a>
+                                <a href="AdminServlet?method=lookOrder">查看订单</a>
                             </li>
                             <li>
                                 <a href="AdminServlet?method=getClassify&type=addPhone">添加手机</a>

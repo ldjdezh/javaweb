@@ -5,6 +5,7 @@ import java.util.List;
 import cn.ldj.domain.Manager;
 import cn.ldj.domain.MobileClassify;
 import cn.ldj.domain.MobileForm;
+import cn.ldj.domain.OrderForm;
 
 public interface AdminDao {
 	void addMade(String made) throws Exception;
@@ -28,4 +29,8 @@ public interface AdminDao {
 	int getTotal() throws Exception;
 
 	void deleteMade(int mid) throws Exception;
+
+	int getTotalByOrder() throws Exception;
+
+	List<OrderForm> getOrderFormList(int begin, int end) throws Exception;
 }

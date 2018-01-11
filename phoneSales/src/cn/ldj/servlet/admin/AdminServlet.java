@@ -4,6 +4,7 @@ import cn.ldj.domain.Manager;
 import cn.ldj.domain.MobileClassify;
 import cn.ldj.domain.MobileForm;
 import cn.ldj.domain.PageMobile;
+import cn.ldj.domain.PageOrder;
 import cn.ldj.service.admin.AdminService;
 import cn.ldj.service.admin.impl.AdminServiceImpl;
 import cn.ldj.utils.BaseServlet;
@@ -20,7 +21,6 @@ public class AdminServlet extends BaseServlet {
 	private AdminService adminService = new AdminServiceImpl();
 
 	public void addMade(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
 		String clazz = request.getParameter("class");
 		
 		try {
@@ -136,6 +136,38 @@ public class AdminServlet extends BaseServlet {
 			}else if("c".equals(type.trim())) {
 				request.getRequestDispatcher("showDetail.jsp").forward(request, response);
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void deletePhone(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String version = request.getParameter("version");
+		
+		MobileForm mf = new MobileForm();
+		mf.setMobile_version(version);
+		
+		try {
+			adminService.deletePhone(mf);
+			request.setAttribute("mess", "删除成功");
+			request.getRequestDispatcher("mess.jsp").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void lookOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String strPage = request.getParameter("page");
+		int pageNum = 1;
+		
+		if(strPage != null) {
+			pageNum = Integer.parseInt(strPage.trim());
+		}
+		
+		try {
+			PageOrder po = adminService.getList(pageNum);
+			request.setAttribute("po", po);
+			request.getRequestDispatcher("lookOrder.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

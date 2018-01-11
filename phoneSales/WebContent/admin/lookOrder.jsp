@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 
+<%@ page import="java.util.*,cn.ldj.domain.*" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -19,7 +21,7 @@
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#">手机销售网后台系统</a>
+                            <a class="navbar-brand" href="manager.jsp">手机销售网后台系统</a>
                         </div>
                         <div>
                             <p class="navbar-text">查看订单</p>
@@ -47,46 +49,47 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <%
+                            PageOrder po = (PageOrder)request.getAttribute("po");
+                            List<OrderForm> list = po.getList();
+                            %>
+                            
+                            <%
+                            for(OrderForm of:list) {
+                            	MobileForm mf = of.getMobileForm();
+                            	User user = of.getUser();
+                            %>
                                 <tr>
-                                    <td>小明</td>
-                                    <td>001</td>
-                                    <td>360 N6</td>
-                                    <td>1</td>
-                                    <td>1399</td>
+                                    <td><%=user.getLogname() %></td>
+                                    <td><%=of.getOid() %></td>
+                                    <td><%=mf.getMobile_name() %></td>
+                                    <td><%=of.getNum() %></td>
+                                    <td><%=of.getSum() %></td>
                                     <td>
-                                        <form role="form">
-                                            <div class="form-group">
-                                                <select class="form-control">
-                                                    <option>取消订单</option>
-                                                    <option>发货</option>
-                                                    <option>正在配送</option>
-                                                    <option>已收货</option>
-                                                </select>
-                                                <button class="btn btn-default btn-sm" type="submit">
-                                                    确定
-                                                </button>
-                                            </div>
-                                        </form>
+                                        	正在配送
                                     </td>
                                 </tr>
+                                <%
+                            	}
+                                %>
                             </tbody>
                         </table>
-                        <span class="label label-info">共10页</span>
-                        <span class="label label-info">当前在第1页</span>
-                        <span class="label label-info">每页显示5条信息</span>
+                        <span class="label label-info">共<%=po.getPageNum() %>页</span>
+                        <span class="label label-info">当前在第<%=po.getCurrentPage() %>页</span>
+                        <span class="label label-info">每页显示<%=po.getPageSize() %>条信息</span>
                         <ul class="pager">
                             <li class="previous">
-                                <a href="#">&larr; 前一页</a>
+                                <a href="AdminServlet?method=lookOrder&page=<%=po.getPre()%>">&larr; 前一页</a>
                             </li>
                             <li class="next">
-                                <a href="#">后一页 &rarr;</a>
+                                <a href="AdminServlet?method=lookOrder&page=<%=po.getNext()%>">后一页 &rarr;</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-
+</div>
 
         <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
