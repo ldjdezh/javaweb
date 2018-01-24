@@ -28,6 +28,7 @@ public class UserServlet extends BaseServlet {
 	 * 获得用户信息，
 	 * 
 	 * 下一步修改
+	 * 
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -47,6 +48,7 @@ public class UserServlet extends BaseServlet {
 
 	/**
 	 * 修改密码
+	 * 
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -106,6 +108,7 @@ public class UserServlet extends BaseServlet {
 
 	/**
 	 * 修改用户信息
+	 * 
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -136,6 +139,7 @@ public class UserServlet extends BaseServlet {
 
 	/**
 	 * 退出
+	 * 
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -149,6 +153,7 @@ public class UserServlet extends BaseServlet {
 
 	/**
 	 * 注册
+	 * 
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -165,6 +170,25 @@ public class UserServlet extends BaseServlet {
 
 		if (logname == null || "".equals(logname.trim())) {
 			request.setAttribute("lognameinfo", "用户名不能为空");
+			request.getRequestDispatcher("register.jsp").forward(request, response);
+			return;
+		}
+
+		boolean flag = false;
+
+		for (int i = 0; i < logname.length(); i++) {
+			char c = logname.charAt(i);
+
+			if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == '_' || (c >= '0' && c <= '9')) {
+				flag = true;
+			} else {
+				flag = false;
+				break;
+			}
+		}
+
+		if (flag == false) {
+			request.setAttribute("lognameinfo", "用户名必须要用字母，数字，下划线");
 			request.getRequestDispatcher("register.jsp").forward(request, response);
 			return;
 		}
@@ -244,9 +268,9 @@ public class UserServlet extends BaseServlet {
 			session.setAttribute("user", user);
 
 			List<ShopCar> carList = new ArrayList<ShopCar>();
-			
+
 			session.setAttribute("carList", carList);
-			
+
 			request.setAttribute("mess", "登录成功");
 			request.getRequestDispatcher("mess.jsp").forward(request, response);
 
